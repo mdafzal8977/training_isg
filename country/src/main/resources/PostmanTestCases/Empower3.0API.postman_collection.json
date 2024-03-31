@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "e1023168-a321-44e7-a99e-81edbe097de4",
+		"name": "Empower3.0API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Country",
+			"item": [
+				{
+					"name": "localhost:9090/country",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"16\",\r\n    \"countryName\": \"hgfhfgf\",\r\n    \"alphaCode\": \"u\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/country",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"country"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9090/countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/country/356",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"country",
+								"356"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9090/country/076",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/country/076",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"country",
+								"076"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9090/country/3566",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+									"    console.log(response.json());\r",
+									"});\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"countryName\": \"Sonnu\",\r\n    \"alphaCode\":\"fff\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/country/3566",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"country",
+								"3566"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9090/country/356",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/country/356",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"country",
+								"356"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9090/country/36",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"countryName\": \"dddd\"\r\n    \r\n    \r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/country/36",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"country",
+								"36"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
